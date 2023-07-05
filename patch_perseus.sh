@@ -30,12 +30,12 @@ chmod +x apkeep
 # For bilibili version please check original repo by CapitalGrin
 
 # Download Azur Lane
-if [ ! -f "com.hkmanjuu.azurlane.gp" ]; then
+if [ ! -f "com.hkmanjuu.azurlane.gp.apk" ]; then
     echo "Get Azur Lane apk"
 
     # eg: wget "your download link" -O "your packge name.apk" -q
     #if you want to patch .xapk, change the suffix here to wget "your download link" -O "your packge name.xapk" -q
-    wget https://dl.dropboxusercontent.com/s/fl31i9ry0ahje9l/Azur%20Lane%20TW.apk?dl=0 -O com.hkmanjuu.azurlane.gp -q
+    wget https://dl.dropboxusercontent.com/s/fl31i9ry0ahje9l/Azur%20Lane%20TW.apk?dl=0 -O com.hkmanjuu.azurlane.gp.apk -q
     echo "apk downloaded !"
     
     # if you can only download .xapk file uncomment 2 lines below. (delete the '#')
@@ -50,7 +50,7 @@ if [ ! -d "Perseus" ]; then
 fi
 
 echo "Decompile Azur Lane apk"
-java -jar apktool.jar -q -f d com.hkmanjuu.azurlane.gp
+java -jar apktool.jar -q -f d com.hkmanjuu.azurlane.gp.apk
 
 echo "Copy Perseus libs"
 cp -r Perseus/. com.hkmanjuu.azurlane.gp/lib/
